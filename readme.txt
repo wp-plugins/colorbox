@@ -35,3 +35,8 @@ first - it starts working immediately after activation, and does not require any
 5. Then click `Activate Plugin` button. 
 
 Now you can set your colorbox options, images and use our colorbox.
+
+== Screenshots ==
+    
+1.  WordPress Colorbox - Demo image
+2.  WordPress Colorbox - Demo video
