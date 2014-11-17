@@ -40,3 +40,8 @@ Now you can set your colorbox options, images and use our colorbox.
     
 1.  WordPress Colorbox - Demo image
 2.  WordPress Colorbox - Demo video
+
+== Changelog ==
+
+= 1.0.0 =
+*  Add WordPress Colorbox plugin.
