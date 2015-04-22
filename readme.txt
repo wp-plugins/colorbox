@@ -1,9 +1,9 @@
 === Popup Colorbox ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/colorbox/
-Tags: colorbox, popup, image, images, videos, video, popup video, fancybox, Lightbox slider, shadowbox, Style, style lightbox, lightbox, lightbox pop, lightbox popup, lightview, wordpress popup, wordpress youtube, youtube, wordpress lightbox, popup, popup box, popup image, popup images, popup photo, onclick popup, open image, overlay, page, free, on click popup, photo, Post, thickbox, video lightbox, vimeo, wordpress image lightbox, video popup,
+Tags: colorbox, fancybox, shadowbox, lightbox, lightbox pop, lightbox popup, wordpress popup, wordpress lightbox, popup, popup box, popup image, popup images, popup photo,
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.1.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
