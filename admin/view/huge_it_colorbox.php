@@ -1,16 +1,135 @@
 <?php $hugeit_colorbox_values = $this->model->getcolorboxList(); ?>
 <?php $path_site2 = plugins_url("../../images", __FILE__); ?>
-	<div class="slider-options-head">
-		<div style="float: left;">
-			<div><a href="http://huge-it.com/wordpress-plugins-colorbox-user-manual/" target="_blank">User Manual</a></div>
-			<div>This section allows you to configure the colorbox options. <a href="http://huge-it.com/wordpress-plugins-colorbox-user-manual/" target="_blank">More...</a></div>
-		</div>
-		<div style="float: right;">
-			<a class="header-logo-text" href="http://huge-it.com/colorbox" target="_blank">
-				<div><img width="250px" src="<?php echo $path_site2; ?>/huge-it1.png" /></div>
-				<div>Get the full version</div>
-			</a>
-		</div>
+<style>
+		.free_version_banner {
+			position:relative;
+			display:block;
+			background-image:url(<?php echo $path_site2; ?>/wp_banner_bg.jpg);
+			background-position:top left;
+			backround-repeat:repeat;
+			overflow:hidden;
+		}
+		
+		.free_version_banner .manual_icon {
+			position:absolute;
+			display:block;
+			top:15px;
+			left:15px;
+		}
+		
+		.free_version_banner .usermanual_text {
+                        font-weight: bold !important;
+			display:block;
+			float:left;
+			width:270px;
+			margin-left:75px;
+			font-family:'Open Sans',sans-serif;
+			font-size:12px;
+			font-weight:300;
+			font-style:italic;
+			color:#ffffff;
+			line-height:10px;
+                        margin-top: 0;
+                        padding-top: 15px;
+		}
+		
+		.free_version_banner .usermanual_text a,
+		.free_version_banner .usermanual_text a:link,
+		.free_version_banner .usermanual_text a:visited {
+			display:inline-block;
+			font-family:'Open Sans',sans-serif;
+			font-size:17px;
+			font-weight:600;
+			font-style:italic;
+			color:#ffffff;
+			line-height:30.5px;
+			text-decoration:underline;
+		}
+		
+		.free_version_banner .usermanual_text a:hover,
+		.free_version_banner .usermanual_text a:focus,
+		.free_version_banner .usermanual_text a:active {
+			text-decoration:underline;
+		}
+		
+		.free_version_banner .get_full_version,
+		.free_version_banner .get_full_version:link,
+		.free_version_banner .get_full_version:visited {
+                        padding-left: 60px;
+                        padding-right: 4px;
+			display: inline-block;
+                        position: absolute;
+                        top: 15px;
+                        right: calc(50% - 167px);
+                        height: 38px;
+                        width: 268px;
+                        border: 1px solid rgba(255,255,255,.6);
+                        font-family: 'Open Sans',sans-serif;
+                        font-size: 23px;
+                        color: #ffffff;
+                        line-height: 43px;
+                        text-decoration: none;
+                        border-radius: 2px;
+		}
+		
+		.free_version_banner .get_full_version:hover {
+			background:#ffffff;
+			color:#bf1e2e;
+			text-decoration:none;
+			outline:none;
+		}
+		
+		.free_version_banner .get_full_version:focus,
+		.free_version_banner .get_full_version:active {
+			
+		}
+		
+		.free_version_banner .get_full_version:before {
+			content:'';
+			display:block;
+			position:absolute;
+			width:33px;
+			height:23px;
+			left:25px;
+			top:9px;
+			background-image:url(<?php echo $path_site2; ?>/wp_shop.png);
+			background-position:0px 0px;
+			background-repeat;
+		}
+		
+		.free_version_banner .get_full_version:hover:before {
+			background-position:0px -27px;
+		}
+		
+		.free_version_banner .huge_it_logo {
+			float:right;
+			margin:15px 15px;
+		}
+		
+		.free_version_banner .description_text {
+                        padding:0 0 13px 0;
+			position:relative;
+			display:block;
+			width:100%;
+			text-align:center;
+			float:left;
+			font-family:'Open Sans',sans-serif;
+			color:#fffefe;
+			line-height:inherit;
+		}
+                .free_version_banner .description_text p{
+                        margin:0;
+                        padding:0;
+                        font-size: 14px;
+                }
+		</style>
+	<div class="free_version_banner">
+		<img class="manual_icon" src="<?php echo $path_site2; ?>/icon-user-manual.png" alt="user manual" />
+		<p class="usermanual_text">If you have any difficulties in using the options, Follow the link to <a href="http://huge-it.com/wordpress-colorbox-user-manual/" target="_blank">User Manual</a></p>
+		<a class="get_full_version" href="http://huge-it.com/colorbox/" target="_blank">GET THE FULL VERSION</a>
+                <a href="http://huge-it.com" target="_blank"><img class="huge_it_logo" src="<?php echo $path_site2; ?>/Huge-It-logo.png"/></a>
+                <div style="clear: both;"></div>
+		<div  class="description_text"><p>This is the free version of the plugin. In order to use options from this section, get the full version. We appreciate every customer.</p></div>
 	</div>
 	<div style="clear: both;"></div>
 <div id="post-body-heading" class="post-body-line">
@@ -72,7 +191,7 @@
                                         </div>
                                     </div>
                                 </label>
-				<input type="number" name="params[colorbox_speed]" id="colorbox_speed" value="<?php echo $hugeit_colorbox_values[colorbox_speed]; ?>" class="text">
+				<input type="number" name="params[colorbox_speed]" id="colorbox_speed" value="<?php echo $hugeit_colorbox_values['colorbox_speed']; ?>" class="text">
 				<span>ms</span>
 			</div>
 			<div>
@@ -84,12 +203,12 @@
                                         </div>
                                     </div>
                                 </label>
-				<input type="number" name="params[colorbox_fadeout]" id="colorbox_fadeout" value="<?php echo $hugeit_colorbox_values[colorbox_fadeout]; ?>" class="text">
+				<input type="number" name="params[colorbox_fadeout]" id="colorbox_fadeout" value="<?php echo $hugeit_colorbox_values['colorbox_fadeout']; ?>" class="text">
 				<span>ms</span>
 			</div>
 			<!-- <div class="has-background">
 				<label for="colorbox_href">Light box href<span class="help"></span></label>
-				<input type="text" name="params[colorbox_href]" id="colorbox_href" value="<?php echo $hugeit_colorbox_values[colorbox_href]; ?>" class="text">
+				<input type="text" name="params[colorbox_href]" id="colorbox_href" value="<?php echo $hugeit_colorbox_values['colorbox_href']; ?>" class="text">
 				<span>px</span>
 			</div> -->
 			<div class="has-background">
@@ -106,7 +225,7 @@
 			</div>
 			<!-- <div class="has-background">
 				<label for="colorbox_rel">Light box Rel<span class="help"></span></label>
-				<input type="text" name="params[colorbox_rel]" id="colorbox_rel" value="<?php echo $hugeit_colorbox_values[colorbox_rel]; ?>" class="text">
+				<input type="text" name="params[colorbox_rel]" id="colorbox_rel" value="<?php echo $hugeit_colorbox_values['colorbox_rel']; ?>" class="text">
 				<span>px</span>
 			</div> -->
 			<!--<div class="has-background">
@@ -217,7 +336,7 @@
                                 <label for="colorbox_loop">Loop content
                                     <div class="help">?
                                         <div class="help-block">
-                                            <span class="pnt"></span>Loop content. If “true” give the ability to move from the last image to the first image while navigation..</p>
+                                            <span class="pnt"></span>Loop content. If ï¿½trueï¿½ give the ability to move from the last image to the first image while navigation..</p>
                                         </div>
                                     </div>
                                 </label>
@@ -226,12 +345,12 @@
 			</div>
 			<!-- <div class="has-background">
 				<label for="colorbox_data">Light box data<span class="help"></span></label>
-				<input type="text" name="params[colorbox_data]" id="colorbox_data" value="<?php echo $hugeit_colorbox_values[colorbox_data]; ?>" class="text">
+				<input type="text" name="params[colorbox_data]" id="colorbox_data" value="<?php echo $hugeit_colorbox_values['colorbox_data']; ?>" class="text">
 				<span>px</span>
 			</div> -->
 			<!-- <div class="has-background">
 				<label for="colorbox_classname">Light box className<span class="help"></span></label>
-				<input type="text" name="params[colorbox_classname]" id="colorbox_classname" value="<?php echo $hugeit_colorbox_values[colorbox_classname]; ?>" class="text">
+				<input type="text" name="params[colorbox_classname]" id="colorbox_classname" value="<?php echo $hugeit_colorbox_values['colorbox_classname']; ?>" class="text">
 				<span>px</span>
 			</div> -->
 			<div>
@@ -251,15 +370,15 @@
 		<h3>Buttons Texts</h3>
 		<div class="has-background">
 			<label for="colorbox_previous">Previous button text<span class="help"></span></label>
-			<input type="text" name="params[colorbox_previous]" id="colorbox_previous" value="<?php echo $hugeit_colorbox_values[colorbox_previous]; ?>" class="text">
+			<input type="text" name="params[colorbox_previous]" id="colorbox_previous" value="<?php echo $hugeit_colorbox_values['colorbox_previous']; ?>" class="text">
 		</div>
 		<div>
 			<label for="colorbox_next">Next button text<span class="help"></span></label>
-			<input type="text" name="params[colorbox_next]" id="colorbox_next" value="<?php echo $hugeit_colorbox_values[colorbox_next]; ?>" class="text">
+			<input type="text" name="params[colorbox_next]" id="colorbox_next" value="<?php echo $hugeit_colorbox_values['colorbox_next']; ?>" class="text">
 		</div>
 		<div class="has-background">
 			<label for="colorbox_close">Close button text<span class="help"></span></label>
-			<input type="text" name="params[colorbox_close]" id="colorbox_close" value="<?php echo $hugeit_colorbox_values[colorbox_close]; ?>" class="text">
+			<input type="text" name="params[colorbox_close]" id="colorbox_close" value="<?php echo $hugeit_colorbox_values['colorbox_close']; ?>" class="text">
 		</div>
 	</div>
 	-->
@@ -288,7 +407,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_width]" id="colorbox_width" value="<?php echo $hugeit_colorbox_values[colorbox_width]; ?>" class="text">
+			<input type="number" name="params[colorbox_width]" id="colorbox_width" value="<?php echo $hugeit_colorbox_values['colorbox_width']; ?>" class="text">
 			<span>px</span>
 		</div>
 		
@@ -301,7 +420,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_height]" id="colorbox_height" value="<?php echo $hugeit_colorbox_values[colorbox_height]; ?>" class="text">
+			<input type="number" name="params[colorbox_height]" id="colorbox_height" value="<?php echo $hugeit_colorbox_values['colorbox_height']; ?>" class="text">
 			<span>px</span>
 		</div>
 		
@@ -314,7 +433,7 @@
                                         </div>
                                     </div>
                                 </label>
-			<input type="number" name="params[colorbox_maxwidth]" id="colorbox_maxwidth" value="<?php echo $hugeit_colorbox_values[colorbox_maxwidth]; ?>" class="text">
+			<input type="number" name="params[colorbox_maxwidth]" id="colorbox_maxwidth" value="<?php echo $hugeit_colorbox_values['colorbox_maxwidth']; ?>" class="text">
 			<span>px</span>
 		</div>
 		<div class="has-background not-fixed-size">
@@ -326,17 +445,17 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_maxheight]" id="colorbox_maxheight" value="<?php echo $hugeit_colorbox_values[colorbox_maxheight]; ?>" class="text">
+			<input type="number" name="params[colorbox_maxheight]" id="colorbox_maxheight" value="<?php echo $hugeit_colorbox_values['colorbox_maxheight']; ?>" class="text">
 			<span>px</span>
 		</div>
 		<!--<div class="has-background">
 			<label for="colorbox_innerwidth">Light box innerWidth<span class="help"></span></label>
-			<input type="text" name="params[colorbox_innerwidth]" id="colorbox_innerwidth" value="<?php echo $hugeit_colorbox_values[colorbox_innerwidth]; ?>" class="text">
+			<input type="text" name="params[colorbox_innerwidth]" id="colorbox_innerwidth" value="<?php echo $hugeit_colorbox_values['colorbox_innerwidth']; ?>" class="text">
 			<span>px</span>
 		</div>
 		<div class="has-background">
 			<label for="colorbox_innerheight">Light box innerHeight<span class="help"></span></label>
-			<input type="text" name="params[colorbox_innerheight]" id="colorbox_innerheight" value="<?php echo $hugeit_colorbox_values[colorbox_innerheight]; ?>" class="text">
+			<input type="text" name="params[colorbox_innerheight]" id="colorbox_innerheight" value="<?php echo $hugeit_colorbox_values['colorbox_innerheight']; ?>" class="text">
 			<span>px</span>
 		</div>-->
 		<div>
@@ -348,7 +467,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_initialwidth]" id="colorbox_initialwidth" value="<?php echo $hugeit_colorbox_values[colorbox_initialwidth]; ?>" class="text">
+			<input type="number" name="params[colorbox_initialwidth]" id="colorbox_initialwidth" value="<?php echo $hugeit_colorbox_values['colorbox_initialwidth']; ?>" class="text">
 			<span>px</span>
 		</div>
 		<div class="has-background">
@@ -360,7 +479,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_initialheight]" id="colorbox_initialheight" value="<?php echo $hugeit_colorbox_values[colorbox_initialheight]; ?>" class="text">
+			<input type="number" name="params[colorbox_initialheight]" id="colorbox_initialheight" value="<?php echo $hugeit_colorbox_values['colorbox_initialheight']; ?>" class="text">
 			<span>px</span>
 		</div>
 	</div>
@@ -388,7 +507,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="number" name="params[colorbox_slideshowspeed]" id="colorbox_slideshowspeed" value="<?php echo $hugeit_colorbox_values[colorbox_slideshowspeed]; ?>" class="text">
+			<input type="number" name="params[colorbox_slideshowspeed]" id="colorbox_slideshowspeed" value="<?php echo $hugeit_colorbox_values['colorbox_slideshowspeed']; ?>" class="text">
 			<span>ms</span>
 		</div>
 		<div class="has-background">
@@ -396,7 +515,7 @@
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>If “true” it works automatically.</p>
+                                    <p>If ï¿½trueï¿½ it works automatically.</p>
                                 </div>
                             </div>
                         </label>
@@ -412,7 +531,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="text" name="params[colorbox_slideshowstart]" id="colorbox_slideshowstart" value="<?php echo $hugeit_colorbox_values[colorbox_slideshowstart]; ?>" class="text">
+			<input type="text" name="params[colorbox_slideshowstart]" id="colorbox_slideshowstart" value="<?php echo $hugeit_colorbox_values['colorbox_slideshowstart']; ?>" class="text">
 		</div>
 		<div class="has-background">
                         <label for="colorbox_slideshowstop">Slideshow stop button text
@@ -423,7 +542,7 @@
                                 </div>
                             </div>
                         </label>
-			<input type="text" name="params[colorbox_slideshowstop]" id="colorbox_slideshowstop" value="<?php echo $hugeit_colorbox_values[colorbox_slideshowstop]; ?>" class="text">
+			<input type="text" name="params[colorbox_slideshowstop]" id="colorbox_slideshowstop" value="<?php echo $hugeit_colorbox_values['colorbox_slideshowstop']; ?>" class="text">
 		</div>
 	</div>
 	<div class="options-block" style="margin-top:0px;">
@@ -434,7 +553,7 @@
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>If “true” the popup does not change it’s position while scrolling up or down.</p>
+                                    <p>If ï¿½trueï¿½ the popup does not change itï¿½s position while scrolling up or down.</p>
                                 </div>
                             </div>
                         </label>

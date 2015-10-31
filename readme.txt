@@ -1,10 +1,10 @@
 === Popup Colorbox ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/colorbox/
-Tags: colorbox, fancybox, shadowbox, lightbox, lightbox pop, lightbox popup, wordpress popup, wordpress lightbox, popup, popup box, popup image, popup images, popup photo,
+Tags: colorbox, fancybox, shadowbox, lightbox, lightbox pop, lightbox popup, wordpress popup, wordpress lightbox, popup, popup box, popup image, popup images, popup photo,pop up,
 Requires at least: 3.0.1
-Tested up to: 4.1.2
-Stable tag: 1.0.0
+Tested up to: 4.3.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

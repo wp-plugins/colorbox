@@ -3,7 +3,7 @@
 Plugin Name: Huge IT Popup Colorbox
 Plugin URI: http://huge-it.com/colorbox
 Description: Using this plugin users could view you website's photos with big sizes in beautiful popup and even more.
-Version: 1.0.0
+Version: 1.0.2
 Author: Huge-IT
 Author URI: http://huge-it.com
 License: GPL
