@@ -129,7 +129,7 @@
 		<a class="get_full_version" href="http://huge-it.com/colorbox/" target="_blank">GET THE FULL VERSION</a>
                 <a href="http://huge-it.com" target="_blank"><img class="huge_it_logo" src="<?php echo $path_site2; ?>/Huge-It-logo.png"/></a>
                 <div style="clear: both;"></div>
-		<div  class="description_text"><p>This is the free version of the plugin. In order to use options from this section, get the full version. We appreciate every customer.</p></div>
+		<div  class="description_text"><p>This is the free version of the plugin. Click "GET THE FULL VERSION" for more advanced options.   We appreciate every customer.</p></div>
 	</div>
 	<div style="clear: both;"></div>
 <div id="post-body-heading" class="post-body-line">
